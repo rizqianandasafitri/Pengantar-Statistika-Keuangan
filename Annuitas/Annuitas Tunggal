@@ -1,0 +1,25 @@
+
+#A : nilai akumulasi
+#i : bunga
+#\n : banyak cicilan ke-n
+#m : per hitungan bulan selama 1 tahun
+#k : cicil
+annuitas<- function(num, k, i, n)
+  switch(num, 
+         satu = {
+           v= 1/(1+i)
+           cat("Nilai v:", v,"\n")
+           Snakhir = k*(((1+i)^n)-1)/i
+           cat ("Nilai akumulasi  dari annuitas akhir sebesar :", Snakhir,"\n")
+           anakhir = k*(1-v^n)/i
+           cat("Nilai pv dari annuitas akhir sebesar :",anakhir,"\n")
+         },
+         dua = {
+           v= 1/(1+i)
+           cat("Nilai v:", v,"\n")
+           Snawal = k*(((1+i)^n)-1)/(i*v)
+           cat ("Nilai akumulasi  dari annuitas awal sebesar :", Snawal,"\n")
+           anawal = (k*(1-v^n))/(i*v)
+           cat("Nilai pv dari annuitas awal sebesar :",anawal,"\n")
+         }
+  )
