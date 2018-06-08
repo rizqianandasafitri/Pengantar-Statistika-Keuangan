@@ -1,0 +1,30 @@
+
+#A : nilai akumulasi
+#i : bunga
+#\n : banyak cicilan ke-n
+#m : per hitungan bulan selama 1 tahun
+#k : cicil
+#t : tahun
+Kmajemuk<- function(num, i, t, nilai, m=TRUE)
+{
+  
+j=i/m
+n=m*t
+v= 1/(1+j)
+  switch(num, 
+         satu = {
+           cat("Nilai v:", v,"\n")
+           K_Sn = nilai/((((1+j)^n)-1)/j)
+           cat ("Nilai akumulasi  dari annuitas akhir sebesar :", K_Sn,"\n")
+           K_An = nilai/((1-v^n)/j)  
+           cat("Nilai pv dari annuitas akhir sebesar :",K_An,"\n")
+         },
+         dua = {
+           cat("Nilai v:", v,"\n")
+           K_Sn = nilai/((((1+j)^n)-1)/(j*v))
+           cat ("Nilai akumulasi  dari annuitas awal sebesar :",  K_Sn,"\n")
+           K_An = nilai/((1-v^n)/(j*v))
+           cat("Nilai pv dari annuitas awal sebesar :", K_An,"\n")
+         }
+  )
+}
