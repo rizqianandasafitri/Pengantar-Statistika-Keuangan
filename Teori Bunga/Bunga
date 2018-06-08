@@ -1,0 +1,21 @@
+# Pengantar-Statistika-Keuangan
+pilih <- function(num, k,t,a,m)
+  #a: nilai akumulasi
+  #i: bunga
+  #t: tahun
+  #m: per 3 bulanan
+  #k :present value
+  switch(num, 
+         satu = {
+           bungatunggal = (a/k-1)/t
+           print(bungatunggal)
+         },
+         dua = {
+           bungamajemuknominal = ((a/k)^(1/(m*t))-1)*m
+           print(bungamajemuknominal)
+         },
+         tiga = {
+           bungamajemukkontinu = log(a/k)/t
+           print(bungamajemukkontinu)
+         }
+  )
